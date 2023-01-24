@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-class HomeController extends Controller
+class DashboardController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -11,6 +11,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('dashboard.index');
     }
 }
