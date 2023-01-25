@@ -1,6 +1,6 @@
 <?php
 
-use App\Enums\BookStatusEnum;
+use App\Enums\BorrowingStatusEnum;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -14,12 +14,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('books', function (Blueprint $table) {
+        Schema::create('borrowing_books', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('classification_id')->constrained('classification_books')->references('id');
-            $table->string('name', 50);
-            $table->string('author', 50);
-            $table->enum('status', BookStatusEnum::values());
+            $table->foreignId('user_id')->constrained('users')->references('id');
+            $table->foreignId('book_id')->constrained('books')->references('id');
+            $table->date('devolution');
+            $table->enum('status', BorrowingStatusEnum::names());
             $table->timestamps();
             $table->softDeletes();
         });
@@ -32,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('books');
+        Schema::dropIfExists('borrowing_books');
     }
 };
