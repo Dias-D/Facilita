@@ -11,6 +11,11 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    public function borrowing()
+    {
+        return $this->hasMany(BorrowingBook::class);
+    }
+
     /**
      * Always encrypt the password when it is updated.
      *

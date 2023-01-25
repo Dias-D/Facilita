@@ -11,6 +11,16 @@ class Book extends Model
     use HasFactory;
     use SoftDeletes;
 
+    public function classification()
+    {
+        return $this->hasOne(ClassificationBook::class);
+    }
+
+    public function borrowing()
+    {
+        return $this->hasOne(BorrowingBook::class);
+    }
+
     protected $fillable = [
         'name',
         'author',
