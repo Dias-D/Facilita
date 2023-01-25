@@ -19,13 +19,12 @@ class BookFactory extends Factory
     public function definition()
     {
         $classification_ids = ClassificationBook::all()->pluck('id')->toArray();
-        $status = BookStatusEnum::names();
 
         return [
             'classification_id' => $this->faker->randomElement($classification_ids),
             'name'              => 'O Diário de Vampiro: ' . $this->faker->numberBetween(0, 7),
             'author'            => $this->faker->name,
-            'status'            => $this->faker->randomElement($status)
+            'status'            => BookStatusEnum::fromName('AVAILABLE')
         ];
     }
 }

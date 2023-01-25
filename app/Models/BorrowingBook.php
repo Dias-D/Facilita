@@ -6,24 +6,25 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Book extends Model
+class BorrowingBook extends Model
 {
     use HasFactory;
     use SoftDeletes;
 
-    public function classification()
+    public function user()
     {
-        return $this->hasOne(ClassificationBook::class);
+        return $this->belongsTo(User::class);
     }
 
-    public function borrowing()
+    public function book()
     {
-        return $this->hasOne(BorrowingBook::class);
+        return $this->belongsTo(Book::class);
     }
 
     protected $fillable = [
-        'name',
-        'author',
+        'user_id',
+        'book_id',
+        'devolution',
         'status'
     ];
 }

@@ -11,6 +11,11 @@ class ClassificationBook extends Model
     use HasFactory;
     use SoftDeletes;
 
+    public function books()
+    {
+        return $this->hasMany(Book::class);
+    }
+
     protected $fillable = [
         'classification'
     ];
