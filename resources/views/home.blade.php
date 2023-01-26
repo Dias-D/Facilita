@@ -24,7 +24,7 @@
     </div>
     @endif
     <div class="flex justify-end bg-red-100 dark:bg-black text-red-700 px-4 py-3">
-        <a href="{{url('/registration')}}">
+        <a href="{{url('/user/registration')}}">
             <button class="px-3 py-1 font-bold text-white rounded bg-red-500 focus:outline-none">
                 <span>Registrar</span>
             </button>
