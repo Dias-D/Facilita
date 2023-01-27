@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\RegisterRequest;
-use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -25,10 +23,10 @@ class AuthController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
-            return redirect()->intended('/dashboard');
+            return redirect()->route('dashboard');
         }
         return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
+            'email' => 'Credenciais incorretas! Por favor, insira os dados válidos.',
         ])->onlyInput('email');
     }
 
@@ -46,20 +44,6 @@ class AuthController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/');
-    }
-
-    public function register(RegisterRequest $request)
-    {
-        $user = User::create($request->validated());
-
-        auth()->login($user);
-
-        return redirect('/dashboard')->with('success', "Account successfully registered.");
-    }
-
-    public function registration()
-    {
-        return view('register');
+        return redirect()->route('home');
     }
 }

@@ -65,7 +65,7 @@
                                     @enderror
                                 </label>
                                 <div class="flex justify-center">
-                                    <button class="px-4 py-1 mt-6font-bold text-white rounded bg-green-500 focus:outline-none">
+                                    <button class="px-4 py-1 mt-6 font-bold text-white rounded bg-green-500 focus:outline-none">
                                         <span>Registrar</span>
                                     </button>
                                 </div>
@@ -76,6 +76,4 @@
             </div>
         </div>
     </div>
-</body>
-
-</html>
+    @include('components.footer.index')
