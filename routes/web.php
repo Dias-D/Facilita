@@ -19,9 +19,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/user/registration', [UserController::class, 'registration']);
 Route::post('/login', [AuthController::class, 'login'])->name('login');
-Route::post('/user/register', [UserController::class, 'register']);
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
@@ -30,6 +28,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/user/update', [UserController::class, 'update'])->name('user_update');
 
     Route::resource('/books', BookController::class);
+    Route::resource('/users', UserController::class);
 });
 
 Route::fallback(function () {

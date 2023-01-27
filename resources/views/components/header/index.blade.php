@@ -12,6 +12,7 @@
 
 <body class="dark">
     @include('components.header.alert')
+    @if(Auth::check())
     <div class="flex dark:bg-black justify-between px-4 py-3">
         <div>
             <ul class="flex">
@@ -19,19 +20,17 @@
                     <a class="text-white hover:text-blue-800" href="{{ route('dashboard') }}">Home</a>
                 </li>
                 <li class="mr-6">
-                    <a class="text-white hover:text-blue-800" href="#">Empréstimos</a>
+                    <a class="text-white hover:text-blue-800" href="{{ route('users.index') }}">Usuários</a>
                 </li>
                 <li class="mr-6">
                     <a class="text-white hover:text-blue-800" href="{{ route('books.index') }}">Livros</a>
                 </li>
+                <li class="mr-6">
+                    <a class="text-white hover:text-blue-800" href="#">Empréstimos</a>
+                </li>
             </ul>
         </div>
         <div>
-            <a href="{{ route('user_edit') }}">
-                <button class="px-3 py-1 font-bold text-white rounded bg-red-500 focus:outline-none">
-                    <span>Editar Usuário</span>
-                </button>
-            </a>
             <a href="{{ route('logout') }}">
                 <button class="px-3 py-1 font-bold text-white rounded bg-red-500 focus:outline-none">
                     <span>Sair</span>
@@ -39,3 +38,4 @@
             </a>
         </div>
     </div>
+    @endif
