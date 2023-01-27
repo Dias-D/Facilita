@@ -13,7 +13,7 @@ class Book extends Model
 
     public function classification()
     {
-        return $this->hasOne(ClassificationBook::class);
+        return $this->belongsTo(ClassificationBook::class);
     }
 
     public function borrowing()
@@ -22,6 +22,7 @@ class Book extends Model
     }
 
     protected $fillable = [
+        'classification_id',
         'name',
         'author',
         'status'

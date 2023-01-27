@@ -17,7 +17,7 @@ class ClassificationBookSeeder extends Seeder
         $classifications = ['Aventura', 'Crônica', 'Drama', 'Fantasia', 'Ficção', 'Romance'];
 
         foreach ($classifications as $classification) {
-            ClassificationBook::create(['classification' => $classification]);
+            ClassificationBook::create(['description' => $classification]);
         }
     }
 }
