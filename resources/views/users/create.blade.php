@@ -26,13 +26,6 @@
                                 <span class="block font-medium text-brand-danger">{{ $message }}</span>
                                 @enderror
                             </label>
-                            <label class="block mt-6">
-                                <span class="text-md font-medium text-gray-800">Senha</span>
-                                <input type="password" name="password" class="block w-full px-2 py-1 mt-1 text-md bg-gray-100 border-2 border-transparent rounded" />
-                                @error('password')
-                                <span class="block font-medium text-brand-danger">{{ $message }}</span>
-                                @enderror
-                            </label>
                             <div class="flex justify-center">
                                 <button class="px-4 py-1 mt-6 font-bold text-white rounded bg-green-500 focus:outline-none">
                                     <span>Registrar</span>
