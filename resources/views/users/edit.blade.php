@@ -10,7 +10,7 @@
             <div class="flex flex-col overflow-hidden bg-white rounded-lg">
                 <div class="flex flex-col px-12 py-10 bg-white">
                     <div class="mt-1">
-                        <form method="post" action="{{ route('user_update') }}" novalidate>
+                        <form method="post" action="{{ route('users.store') }}" novalidate>
                             @csrf
                             <label class="block">
                                 <span class="text-lg font-medium text-gray-800">Nome</span>

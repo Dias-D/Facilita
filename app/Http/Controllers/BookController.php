@@ -19,7 +19,7 @@ class BookController extends Controller
     {
         $books = Book::orderBy('name')->get();
 
-        return view('book.index', ['books' => $books]);
+        return view('books.index', ['books' => $books]);
     }
 
     /**
@@ -31,7 +31,7 @@ class BookController extends Controller
     {
         $classificationsBooks = ClassificationBook::orderBy('description')->get();
 
-        return view('book.create', [
+        return view('books.create', [
             'classifications' => $classificationsBooks
         ]);
     }
@@ -76,7 +76,7 @@ class BookController extends Controller
 
         $classificationsBooks = ClassificationBook::orderBy('description')->get();
 
-        return view('book.edit', [
+        return view('books.edit', [
             'book' => $book,
             'classifications' => $classificationsBooks
         ]);
