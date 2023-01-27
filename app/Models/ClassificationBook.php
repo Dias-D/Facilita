@@ -17,6 +17,6 @@ class ClassificationBook extends Model
     }
 
     protected $fillable = [
-        'classification'
+        'description'
     ];
 }

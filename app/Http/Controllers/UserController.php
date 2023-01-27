@@ -11,10 +11,6 @@ class UserController extends Controller
 {
     public function edit()
     {
-        if (!Auth::check()) {
-            return redirect('/')->withErrors(['error' => 'The provided credentials do not match our records.']);
-        }
-
         return view('user.edit', ['user' => auth()->user()]);
     }
 
@@ -24,7 +20,7 @@ class UserController extends Controller
 
         auth()->login($user);
 
-        return redirect('/dashboard')->with('success', "Account successfully registered.");
+        return redirect('/dashboard')->with('success', "Usuário criado com sucesso.");
     }
 
     public function registration()
@@ -34,18 +30,12 @@ class UserController extends Controller
 
     public function update(UpdateUserRequest $request)
     {
-        $request->validated();
+        $validated = $request->validated();
 
         $user = Auth::user();
 
-        if ($request->input('name'))
-            $user->name = $request->input('name');
+        $user->update($validated);
 
-        if ($request->input('email'))
-            $user->email = $request->input('email');
-
-        $user->save();
-
-        return redirect('/dashboard')->with('success', "Account successfully registered.");
+        return redirect('/dashboard')->with('success', "Usuário atualizado com sucesso.");
     }
 }

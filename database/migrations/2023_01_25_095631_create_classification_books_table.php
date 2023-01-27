@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('classification_books', function (Blueprint $table) {
             $table->id();
-            $table->string('classification', 20);
+            $table->string('description', 20);
             $table->timestamps();
             $table->softDeletes();
         });
