@@ -26,7 +26,7 @@ class AuthController extends Controller
             return redirect()->route('dashboard');
         }
         return back()->withErrors([
-            'email' => 'Credenciais incorretas! Por favor, insira os dados válidos.',
+            'email' => 'Credenciais incorretas! Por favor, tente novamente.',
         ])->onlyInput('email');
     }
 
