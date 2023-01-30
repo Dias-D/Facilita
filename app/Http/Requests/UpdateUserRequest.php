@@ -25,8 +25,8 @@ class UpdateUserRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'  => 'unique:users,name,' . Auth::user()->id . ',id',
-            'email' => 'email:rfc,dns|unique:users,email,' . Auth::user()->id . ',id'
+            'name'  => 'max:50',
+            'email' => 'max:50|email:rfc,dns|unique:users,email,' . Auth::user()->id . ',id'
         ];
     }
 }
