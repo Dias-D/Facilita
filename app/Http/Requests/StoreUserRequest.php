@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
 
 class StoreUserRequest extends FormRequest
 {
@@ -13,7 +14,7 @@ class StoreUserRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return Auth::check();
     }
 
     /**
@@ -24,8 +25,8 @@ class StoreUserRequest extends FormRequest
     public function rules()
     {
         return [
-            'email'     => 'required|email:rfc,dns|unique:users,email',
-            'name'      => 'required|unique:users,name'
+            'name'      => 'required|max:50',
+            'email'     => 'required|max:50|email:rfc,dns|unique:users,email'
         ];
     }
 }

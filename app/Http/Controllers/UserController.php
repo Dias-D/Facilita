@@ -83,8 +83,6 @@ class UserController extends Controller
     {
         $validated = $request->validated();
 
-        $user = Auth::user();
-
         $user->update($validated);
 
         return redirect('/users')->with('success', "Usuário atualizado com sucesso.");

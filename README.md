@@ -36,8 +36,21 @@ DB_PASSWORD=password
 sail artisan key:generate
 ```
 
--   Finalmente, para que o frontend inicie:
+- A seguir, os comandos necessários para criação das tabelas e dados fictícios:
+
+```bash
+sail artisan migrate
+sail artisan db:seed --class=DatabaseSeeder
+```
+
+- Finalmente, para iniciar e acessar o projeto:
 
 ```bash
 npm run dev
+```
+
+- Autenticação:
+```bash
+email: admin@laravel.io
+senha: password
 ```
