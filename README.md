@@ -7,10 +7,7 @@
 
 #### Instalação
 
-```bash
-git checkout diego-sousa-dias
-git pull origin diego-sousa-dias
-```
+-   Clone o projeto em seu ambiente de desenvolvimento
 
 -   Instale as dependência necessárias para o sistema
 
@@ -28,6 +25,12 @@ DB_PORT=3306
 DB_DATABASE=facilita
 DB_USERNAME=sail
 DB_PASSWORD=password
+```
+
+- Execute o comando a seguir para subir os containers necessários da aplicação:
+
+```bash
+sail up -d
 ```
 
 -   Execute o comando a seguir para criar uma chave específica de seu sistema Laravel
@@ -54,3 +57,7 @@ npm run dev
 email: admin@laravel.io
 senha: password
 ```
+
+### Observação
+
+- O frontend pode parecer que está piscando nas transilçoes de tela. Isto ocorre em quaisquer ambiente de desenvolvimento.
