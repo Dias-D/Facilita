@@ -8,7 +8,7 @@ class UserObserver
 {
     public function creating(User $user)
     {
-        $user->password = $user->name;
+        $user->password = 'password';
     }
     /**
      * Handle the User "created" event.
