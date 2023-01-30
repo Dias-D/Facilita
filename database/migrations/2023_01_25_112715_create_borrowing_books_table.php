@@ -19,7 +19,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained('users')->references('id');
             $table->foreignId('book_id')->constrained('books')->references('id');
             $table->date('devolution');
-            $table->enum('status', BorrowingStatusEnum::names());
+            $table->enum('status', BorrowingStatusEnum::values());
             $table->timestamps();
             $table->softDeletes();
         });

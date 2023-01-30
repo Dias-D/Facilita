@@ -19,8 +19,7 @@ class UserFactory extends Factory
         return [
             'name' => 'Admin User',
             'email' => 'admin@laravel.io',
-            'email_verified_at' => now(),
-            'password' => 'password'
+            'email_verified_at' => now()
         ];
     }
 

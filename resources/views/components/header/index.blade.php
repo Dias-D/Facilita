@@ -26,7 +26,7 @@
                     <a class="text-white hover:text-blue-800" href="{{ route('books.index') }}">Livros</a>
                 </li>
                 <li class="mr-6">
-                    <a class="text-white hover:text-blue-800" href="#">Empréstimos</a>
+                    <a class="text-white hover:text-blue-800" href="{{ route('borrowing-books.index') }}">Empréstimos</a>
                 </li>
             </ul>
         </div>
