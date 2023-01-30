@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\BorrowingBookController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
@@ -28,6 +29,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/user/update', [UserController::class, 'update'])->name('user_update');
 
     Route::resource('/books', BookController::class);
+    Route::resource('/borrowing-books', BorrowingBookController::class);
     Route::resource('/users', UserController::class);
 });
 

@@ -3,8 +3,10 @@
 namespace App\Providers;
 
 use App\Models\Book;
+use App\Models\BorrowingBook;
 use App\Models\User;
 use App\Observers\BookObserver;
+use App\Observers\BorrowingBookObserver;
 use App\Observers\UserObserver;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
@@ -31,6 +33,7 @@ class EventServiceProvider extends ServiceProvider
     public function boot()
     {
         Book::observe(BookObserver::class);
+        BorrowingBook::observe(BorrowingBookObserver::class);
         User::observe(UserObserver::class);
     }
 

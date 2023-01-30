@@ -5,6 +5,7 @@ namespace App\Enums;
 enum BorrowingStatusEnum: string
 {
     case LATE = 'Atrasado';
+    case OPEN = 'Aberto';
     case RETURNED = 'Devolvido';
 
     public static function values(): array
